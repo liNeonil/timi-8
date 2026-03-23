@@ -1,47 +1,39 @@
-function sayHello() {
+function checkCharacter() {
   console.log("user pressed button");
-  let name = document.getElementById("NameInput").value;
-  console.log("name is", name);
-  if (name === "") {
-    document.getElementById("nameOutput").innerText = "type you're name first!";
-    return;
-  }
-
-  document.getElementById("nameOutput").innerText = `hello ${name}`;
-}
-
-function checkAge() {
+  let name = document.getElementById("nameInput").value;
   let age = Number(document.getElementById("ageInput").value);
+  let score = Number(document.getElementById("scoreInput").value);
+  console.log("name is", name);
   console.log("age is", age);
-  console.log(isNaN(age));
-  if (isNaN(age) || age === 0) {
-    document.getElementById("ageOutput").innerText = "input Age Here";
+  console.log("score is", score);
+
+  let output = document.getElementById("characterOutput");
+  if (name === "" || isNaN(age) || isNaN(score) || age === 0 || score === 0) {
+    output.innerText = "type your name, age and score first!";
     return;
   }
-}
 
-let message = ";";
-if (age > 18) {
-  message = "you are an adult";
-} else message = "you are Child";
-console.log(message);
+  let result = "";
 
-document.getElementById(ageOutput).innerText = message;
+  if (age < 18) {
+    result = "Too Young To play!!!!!";
+  } else if (score > 80) {
+    result = "Pro gamer";
+  } else if (score > 50) {
+    result = "Normal pleb";
+  } else {
+    result = "Beginner bozo";
+  }
 
-function calculate() {
-  let num1 = Number(document.getElementById("num1").value);
-  let num2 = Number(document.getElementById("num2").value);
-  let operator = document.getElementById("operator").value;
-  console.log("num1 is", num1);
-  console.log("num2 is", num2);
-  console.log("operator is", operator);
-  if (isNaN(num1) || isNaN(num2) || num1 === "" || num2 === "") {
-    let result;
-    if (operator === "+") {
-      result = num1 + num2;
-      console.log("result is", result);
-    }
-  } else result = "result is" + (num1 + num2);
-  console.log(result);
-  document.getElementById("calcOutput").innerText = result;
+  document.getElementById("characterOutput").innerText = result;
+
+  // 1. Ná í name, age og score
+  // 2. Breyta age og score í Number
+  // 3. Ef eitthvað vantar → sýna villu
+  // 4. Nota if / else:
+  // ef age < 18 skila þá "Of ung/ur til að spila"
+  // ef score > 80 og age >= 18 "Pro"
+  // ef score > 50 en < 80 "Normal"
+  // annars skila "Beginner"
+  // 5. Sýna niðurstöðu í output
 }
