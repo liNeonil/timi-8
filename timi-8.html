@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timi-8</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>java script 101</h1>
+
+    <div class="card">
+      <h2>inpout name here</h2>
+      <input id="nameInput" type="text" placeholder="you're name" />
+      <button onclick="sayHello()">appear hello + name</button>
+      <div class="output" id="nameOutput">here...</div>
+    </div>
+
+    <div class="card">
+      <h2>input age here</h2>
+      <input id="ageInput" type="number" placeholder="you're age here" />
+      <button onclick="checkAge()">appear if adult or child</button>
+      <div class="output" id="ageOutput">here...</div>
+    </div>
+    <div class="card">
+      <h2>calculator</h2>
+      <input id="num1" type="number" placeholder="number 1. . ." />
+      <select name="" id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input id="num2" type="number" placeholder="number 2. . ." />
+
+      <button onclick="calculate()">calculate</button>
+      <div class="output" id="calcOutput">here...</div>
+    </div>
+    <div></div>
+  </body>
+</html>
